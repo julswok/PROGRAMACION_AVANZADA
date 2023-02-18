@@ -1,3 +1,5 @@
+/*	Autor: Juliana Rubio
+*/
 
 /*OBJETIVOS:
 -Resumen sobre TDA
@@ -11,8 +13,8 @@ ESTRUCTURAS EN C++.
 
 DESVENTAJAS:
 -No pueden ser tipo de datos nativos o propios de C++
--Operadores como +/-, No pueden ser empleados en varianñes de estructuras
--No permite ocultación de los miembros
+-Operadores como +/-, No pueden ser empleados en varianÃ±es de estructuras
+-No permite ocultaciÃ³n de los miembros
 
 
 */
@@ -21,7 +23,7 @@ DESVENTAJAS:
 
 /* AUTOR:Juliana Rubio
 Problema:
--Crear una estructura para pedir datos básicos de usuario
+-Crear una estructura para pedir datos bÃ¡sicos de usuario
 _Crear una lista de plabras creadas aleatoriamentente
 -Almacenar en un fichero
 -Leer y presentar en pantalla la lectura de un fichero
@@ -36,7 +38,7 @@ _Crear una lista de plabras creadas aleatoriamentente
 #include <ctime>
 using namespace std;
 
-//Se crea una estructura básica para la captura de datos de los usuarios
+//Se crea una estructura bÃ¡sica para la captura de datos de los usuarios
 
 struct datos_usuarios{
 string nombre;
@@ -46,7 +48,7 @@ int edad;
 
 // Se crea una lista, como conjunto de palabras disponibles para jugar
 
-const string lista_palabras[]= {"hola","mañana", "hoy","tarde", "Noche"};
+const string lista_palabras[]= {"hola","maÃ±ana", "hoy","tarde", "Noche"};
 
 
 int main()
@@ -57,13 +59,13 @@ int main()
     //Se pide cuantos usuarios va a ingresar?:
     cout<<"Cuantos usuarios va a ingresar?: \n";
     cin>> cantidad;
-    //Se crea un objeto struct tamaño cantidad
+    //Se crea un objeto struct tamaÃ±o cantidad
     datos_usuarios personas [cantidad];
 
     //Se piden los datos de los usuarios
     //Se escribe sobre un fichero; se usa "ofstream" para almacenar el fichero
-    //Se crea el objeto tipo ofstream (digital) jumto con el nombre del ficheor (físico)
-    ofstream fichero_escritura ("ejercicioprogramacio.txt");  //Lo txt es el físico
+    //Se crea el objeto tipo ofstream (digital) jumto con el nombre del ficheor (fÃ­sico)
+    ofstream fichero_escritura ("ejercicioprogramacio.txt");  //Lo txt es el fÃ­sico
     //Se pregunta si hay espaciio de memoria
     if (fichero_escritura.is_open()){
     for (i=0;i<cantidad;i++)
