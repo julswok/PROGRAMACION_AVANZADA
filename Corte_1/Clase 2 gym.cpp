@@ -1,3 +1,7 @@
+/*	Autor: Juliana Rubio
+*/
+
+
 #include <iostream>
 
 using namespace std;
@@ -34,7 +38,7 @@ int main(){
 	cout << "Cuantos usuarios va a registrar?: ";
 	cin >> cantidad_usuarios;
 
-	//Se crea un arreglo del TDA gym_usuario de tamaño cantidad_usuarios
+	//Se crea un arreglo del TDA gym_usuario de tamaÃ±o cantidad_usuarios
 	gym_usuario registro_persona[cantidad_usuarios];
 
 	//Se crea un ciclo para capturar los datos
@@ -48,7 +52,7 @@ int main(){
 		cout << "Cantidad hijos: ";
 		cin >> registro_persona[i].hijo_usuario.cantidad;
 
-		//Condición para inscribir al hijo
+		//CondiciÃ³n para inscribir al hijo
 		if (registro_persona[i].hijo_usuario.cantidad > 0){
 			cout << "------------ ID del hijo: ";
 			cin >> registro_persona[i].hijo_usuario.id;
