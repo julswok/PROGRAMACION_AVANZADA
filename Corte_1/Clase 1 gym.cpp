@@ -1,3 +1,6 @@
+/*	Autor: Juliana Rubio
+*/
+
 #include <iostream>
 //Se tiene un gym que requiere un sistema informativo para capturar los datos de sus clientes
 
@@ -52,22 +55,22 @@ char continuar;
   cout<<"Ingrese cantidad de hijos\ng";
   cin>>Cliente1[i].cant_hijos;
 
-  cout<<"Ingrese dirección\n";
+  cout<<"Ingrese direcciÃ³n\n";
   cin>>Cliente1[i].direccion;
 
 
 cout<<"Se ha registrado con exito:"<<Cliente1[i].nombre;
-cout<<"presione 0 para recibir información de la persona, 1 para salir";
+cout<<"presione 0 para recibir informaciÃ³n de la persona, 1 para salir";
 cin>>continuar;
 if (continuar=='0')
 {
-    cout<<"el número de telefono es: ";
+    cout<<"el nÃºmero de telefono es: ";
     cout<<Cliente1[i].movil<<endl;
     cout<<"la masa del cliente es: ";
     cout<<Cliente1[i].masa<<endl;
-    cout<<"la identificación es: ";
+    cout<<"la identificaciÃ³n es: ";
    cout<< Cliente1[i].ID<<endl;
-   cout<<"Género del cliente: ";
+   cout<<"GÃ©nero del cliente: ";
     cout<< Cliente1[i].genero<<endl;
     cout<<"la edad es: "<<Cliente1[i].edad<<endl;
     cout<<"la direccion del cliente es"<<Cliente1[i].direccion<<endl;
