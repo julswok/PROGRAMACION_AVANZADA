@@ -1,1 +1,182 @@
+#include <iostream>
+#include <cstdlib>  // Para rand y srand
+#include <ctime>    // Para time
+using namespace std;
 
+// Estructura para encapsular los datos del conjunto de números aleatorios
+struct conjunto_aleatorio {
+    int max_valor;
+    int tamano;
+    int* numeros;
+};
+
+// Prototipos de funciones
+int menu();
+conjunto_aleatorio generar_conjunto_aleatorio(int tamano, int max_valor);
+void mostrar_histograma(conjunto_aleatorio conjunto);
+void liberar_memoria(conjunto_aleatorio conjunto);
+
+int main() {
+    // Semilla para generar números aleatorios
+    srand(time(nullptr));
+
+    int opcion;
+    conjunto_aleatorio conjunto;
+
+    do {
+        opcion = menu();
+
+        switch (opcion) {
+        case 1:
+            // Pedir al usuario el tamaño del conjunto
+            int tamano;
+            cout << "Ingrese el tamano del conjunto: ";
+            cin >> tamano;
+
+            // Generar el conjunto de números aleatorios
+            conjunto = generar_conjunto_aleatorio(tamano, 20);
+
+            // Mostrar información del conjunto generado
+            cout << "Conjunto generado:\n";
+            cout << "Tamano: " << conjunto.tamano << endl;
+            cout << "Max valor: " << conjunto.max_valor << endl;
+
+            break;
+
+        case 2:
+            // Mostrar histograma del conjunto de números aleatorios
+            if (conjunto.numeros == nullptr) {
+                cout << "No se ha generado un conjunto de numeros aleatorios.\n";
+            }
+            else {
+                mostrar_histograma(conjunto);
+            }
+            break;
+
+        case 3:
+            // Salir del programa
+            liberar_memoria(conjunto);
+            cout << "Saliendo del programa...\n";
+            break;
+
+        default:
+            // Opción inválida
+            cout << "Opcion invalida. Intente de nuevo.\n";
+            break;
+        }
+
+    } while (opcion != 3);
+
+    return 0;
+}
+
+// Función para mostrar el menú y obtener la opción del usuario
+int menu() {
+    int opcion;
+
+    cout << "MENU\n";
+    cout << "1. Generar conjunto de numeros aleatorios\n";
+    cout << "2. Mostrar histograma\n";
+    cout << "3. Salir\n";
+    cout << "Ingrese la opcion deseada: ";
+    cin >> opcion;
+
+    return opcion;
+}
+
+// Función para generar un conjunto de números aleatorios
+conjunto_aleatorio generar_conjunto_aleatorio(int tamano, int max_valor) {
+    // Asignar memoria para el arreglo de números aleatorios
+    int* numeros = new int[tamano];
+
+    // Generar los números aleatorios
+    for (int i = 0; i < tamano; i++) {
+        numeros[i] = rand() % (max_valor + 1);
+    }
+
+    // Crear la estructura de datos del conjunto y asignar los valores
+    conjunto_aleatorio conjunto;
+    conjunto.tamano = tamano;
+    conjunto.max_valor = max_valor;
+    conjunto.numeros = numeros;
+
+    return conjunto;
+}
+
+// Función para mostrar el histograma del conjunto de números aleatorios
+void mostrar_histograma(conjunto_aleatorio conjunto) {
+    // Crear un arreglo para contar la frecuencia de los valores en el conjunto
+    int frecuencia[21] = { 0 };  / Crear un arreglo para contar la frecuencia de los valores en el conjunto
+int frecuencia[21] = { 0 };  // El índice 0 se utiliza para los valores no presentes en el conjunto
+
+// Contar la frecuencia de cada valor en el conjunto
+for (int i = 0; i < valores.size_array; i++) {
+    frecuencia[valores.int_array[i]]++;
+}
+
+// Imprimir el histograma
+cout << "\nHistograma:\n";
+for (int i = 0; i <= valores.max_valor; i++) {
+    // Imprimir el valor del eje horizontal
+    cout << i << "\t| ";
+
+    // Imprimir la barra del histograma
+    for (int j = 0; j < frecuencia[i]; j++) {
+        cout << "*";
+    }
+
+    cout << endl;
+}
+void generarHistograma(resultados arg_generar){
+    int n = arg_generar.size_array;
+    int max_valor = arg_generar.max_valor;
+    int frecuencia[max_valor+1] = {}; //Inicializamos el arreglo de frecuencia con 0
+
+    //Calculamos la frecuencia de cada número en el conjunto
+    for(int i=0; i<n; i++){
+        frecuencia[arg_generar.int_array[i]]++;
+    }
+
+    //Imprimimos el histograma
+    for(int i=0; i<=max_valor; i++){
+        cout << i << ": ";
+        for(int j=0; j<frecuencia[i]; j++){
+            cout << "*";
+        }
+        cout << endl;
+    }
+}
+int main(){
+    //declaración de variables
+    resultados valores_principal; //valores a pasar entre func.
+    int op;
+    bool flag = true;
+
+    //cuerpo del programa
+    while(flag){
+        op = menu();
+        switch(op){
+            case 0:
+                valores_principal = generarVectorAleatorio();
+                cout << "\nMax: " << valores_principal.max_valor << endl;
+                cout << "Size: " << valores_principal.size_array << endl;
+                break;
+            case 1:
+                if(valores_principal.size_array > 0){
+                    generarHistograma(valores_principal);
+                }
+                else{
+                    cout << "Debe generar el conjunto de numeros aleatorios primero" << endl;
+                }
+                break;
+            case 2:
+                flag = false;
+                break;
+            default:
+                //Opción de reserva en caso de entrada de datos errónea
+                cout << "Ingrese opción valida" << endl;
+                break;
+        }
+    }
+    return 0;
+}
