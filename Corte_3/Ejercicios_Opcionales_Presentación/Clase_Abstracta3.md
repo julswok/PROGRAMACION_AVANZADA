@@ -1,5 +1,5 @@
-## EJERCICIO OPCIONAL
-# ENUNCIADO 
+# EJERCICIO OPCIONAL
+## ENUNCIADO 
 1. Declara una clase abstracta "Legislador" que herede de la clase "Persona", con un atributo "provinciaQueRepresenta" (tipo String) y otros atributos.
 2. Declara un método abstracto "getCamaraEnQueTrabaja".
 3.Crea dos clases concretas que hereden de Legislador: la clase "Diputado" y la clase
@@ -93,7 +93,7 @@ public class Main {
     }
 }
 ```
-# SALIDA EN PANTALLA
+## SALIDA EN PANTALLA
 Nombre: Juan
 Edad: 40
 Provincia: Buenos Aires
